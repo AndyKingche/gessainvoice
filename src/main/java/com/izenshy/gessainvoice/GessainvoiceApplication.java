@@ -1,4 +1,4 @@
-package com.app.gessainvoice;
+package com.izenshy.gessainvoice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
