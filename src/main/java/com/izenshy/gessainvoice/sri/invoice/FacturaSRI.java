@@ -2,19 +2,29 @@ package com.izenshy.gessainvoice.sri.invoice;
 
 import com.izenshy.gessainvoice.sri.dto.collection.DetallesDTO;
 import com.izenshy.gessainvoice.sri.dto.single.InfoTributariaDTO;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.xml.bind.annotation.*;
 import lombok.Data;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+
 import java.io.Serializable;
 @XmlRootElement(name = "factura")
+@XmlAccessorType(XmlAccessType.FIELD)
 @Data
+@Schema(name = "FacturaSRI", description = "Representa la estructura de una factura para el SRI")
 public class FacturaSRI implements Serializable {
     @XmlAttribute(name = "id")
     private String id;
+
     @XmlAttribute(name = "version")
     private String version;
+
+    @XmlElement(name = "infoTributaria")
     private InfoTributariaDTO infoTributaria;
+
+    @XmlElement(name = "infoFactura")
     private InfoFacturaDTO infoFactura;
+
+    @XmlElement(name = "detalles")
     private DetallesDTO detalles;
 }
